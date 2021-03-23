@@ -14,10 +14,10 @@ EXPOSE 5025
 ARG JAR_FILE=target/api-0.0.1-SNAPSHOT.jar
 
 # Add the application's jar to the container
-ADD ${JAR_FILE} api-0.0.1-SNAPSHOT.jar
+ADD ${JAR_FILE} api.jar
 
 # Run the jar file 
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/api-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/api.jar"]
  
 # docker build
 # sudo docker build -t alberto21/api .
