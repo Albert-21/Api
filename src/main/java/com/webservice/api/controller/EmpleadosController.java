@@ -36,7 +36,7 @@ public class EmpleadosController {
     @GetMapping("/empledos/{id}")
     public ResponseEntity<Empleados> getPesosById(@PathVariable(value = "id") Long empleadoId) throws ResourceNotFoundException{
         Empleados empleados = empleadosRepository.findById(empleadoId)
-        .orElseThrow(() -> new ResourceNotFoundException("Pesos not found for this id :: " + empleadoId));
+        .orElseThrow(() -> new ResourceNotFoundException("Empleados not found for this id :: " + empleadoId));
         return ResponseEntity.ok().body(empleados);
     }
     
@@ -49,7 +49,7 @@ public class EmpleadosController {
     public ResponseEntity<Empleados> updateEmpleados(@PathVariable(value = "id") Long empleadosId,
          @Validated @RequestBody Empleados empleadosDetails) throws ResourceNotFoundException {
         Empleados empleados = empleadosRepository.findById(empleadosId)
-        .orElseThrow(() -> new ResourceNotFoundException("Pesos not found for this id :: " + empleadosId));
+        .orElseThrow(() -> new ResourceNotFoundException("Empleados not found for this id :: " + empleadosId));
 
         empleados.setId(empleadosDetails.getId());
         empleados.setNombre(empleadosDetails.getNombre());
@@ -63,7 +63,7 @@ public class EmpleadosController {
     public Map<String, Boolean> deleteEmpleados(@PathVariable(value = "id") Long empleadosId)
          throws ResourceNotFoundException {
         Empleados empleados = empleadosRepository.findById(empleadosId)
-       .orElseThrow(() -> new ResourceNotFoundException("Pesos not found for this id :: " + empleadosId));
+       .orElseThrow(() -> new ResourceNotFoundException("Empleados not found for this id :: " + empleadosId));
 
         empleadosRepository.delete(empleados);
         Map<String, Boolean> response = new HashMap<>();
