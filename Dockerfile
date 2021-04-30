@@ -20,7 +20,7 @@ ADD ${JAR_FILE} api.jar
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/api.jar"]
  
 # docker build
-# sudo docker build -t alberto21/api .
+# sudo docker build -t api .
 
 # docker run
-# sudo docker run --name api -p 5025:8080 alberto21/api
+# sudo docker run --name api -p 5025:8080 api
