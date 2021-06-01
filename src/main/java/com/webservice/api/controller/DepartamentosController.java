@@ -37,7 +37,7 @@ public class DepartamentosController {
     
     @Autowired
     private DepartamentosRepository departamentosRepository;
-
+          
     @GetMapping("/departamentos")
     public List<Departamentos> getAllDepartamentos() {
         return departamentosRepository.findAll();
